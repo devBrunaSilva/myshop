@@ -9,10 +9,12 @@ import { addProduct, removeProduct } from "../../redux/Cart/cart-slice";
 
 interface ProductCardProps {
   product: Product;
+  setShowCart: (showCart: boolean) => void;
 }
 
 export const ProductCard: React.FC<ProductCardProps> = ({
-  product
+  product,
+  setShowCart
 }) => {
 
   const {cart} = useSelector((rootReducer: RootReducer) => rootReducer.cartReducer)
@@ -24,7 +26,8 @@ export const ProductCard: React.FC<ProductCardProps> = ({
   const isProductOnCart = cart.find((productOnCart) => product.id === productOnCart.id) !== undefined;
 
   function handleAddProductToCart() {
-    dispatch(addProduct(product))
+    dispatch(addProduct(product));
+    setShowCart(true);
   } 
   
   function handleRemoveProductFromCart() {

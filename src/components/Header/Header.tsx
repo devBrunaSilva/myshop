@@ -12,7 +12,7 @@ export const Header: React.FC = () => {
 
   const { user } = useSelector((rootReducer: RootReducer) => rootReducer.userReducer)
 
-    const dispatch = useDispatch()
+  const dispatch = useDispatch()
 
   const [showCart, setShowCart] = useState(false)
 
@@ -28,6 +28,10 @@ export const Header: React.FC = () => {
     } else {
       dispatch(logout({}))
     }
+  }
+
+  function handleCloseCart() {
+    setShowCart(false);
   }
 
   return(
@@ -55,7 +59,7 @@ export const Header: React.FC = () => {
         </S.ButtonWrapper>
       </S.Wrapper>
 
-      <Cart showCart={showCart} />
+      <Cart showCart={showCart} onCloseCart={handleCloseCart} />
       {/* {showCart && (
       )} */}
     </S.StyledHeader>

@@ -12,7 +12,6 @@ export const Card = styled.article`
   flex-direction: column;
   align-items: center;
 
-
 `;
 
 export const ProductImage = styled.img`
@@ -65,7 +64,7 @@ export const AddToCartButton = styled.button`
   border-radius: .3125rem;
   height: 2.5rem;
   width: 100%;
-  background-color: blue;
+  background-color: #800020;
   color: white;  
   font-size: 1rem;
 
@@ -84,8 +83,8 @@ export const RemoveFromCartButton = styled.button`
   border-radius: .3125rem;
   height: 2.5rem;
   width: 100%;
-  background-color: violet;
-  color: black;  
+  background-color: #2C3E50;
+  color: white;  
   font-size: 1rem;
 
   display: flex;

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const StyledHeader = styled.header`
-  background-color: navy;
+  background-color: #2C3E50;
 `;
 
 export const Wrapper = styled.div`
@@ -17,7 +17,7 @@ export const Wrapper = styled.div`
 export const HeaderTitle = styled.h1`
   font-size: 1.6;
   font-weight: 400;
-  color: #ffffff;
+  color: #B8860B;
 `;
 
 export const ButtonWrapper = styled.div`
@@ -34,7 +34,7 @@ export const AuthButton = styled.button<AuthButtonProps>`
   border-radius: .3125rem;
   height: 1.875rem;
   padding: 0 1rem;
-  background-color: ${(props) => props.isLogged ? 'red' : 'green'};
+  background-color: ${(props) => props.isLogged ? '#800020' : '#B8860B'};
   color: white;  
   font-size: 0.75rem;
 
@@ -52,8 +52,8 @@ export const CartButton = styled.button`
   border-radius: .3125rem;
   height: 1.875rem;
   padding: 0 1rem;
-  background-color: violet;
-  color: black;  
+  background-color: #228B22;
+  color: white;  
   font-size: 0.75rem;
 
   display: flex;

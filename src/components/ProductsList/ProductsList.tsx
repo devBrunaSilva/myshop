@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import * as S from "./styles";
 import axios from "axios";
 import { ProductCard } from "../ProductCard/ProductCard";
+import { Cart } from "../Cart/Cart";
 
 
 export interface Product {
@@ -20,6 +21,7 @@ export interface Product {
 export const ProductsList: React.FC = () => {
 
   const [products, setProducts] =  useState([] as Product[]);
+  const [showCart, setShowCart] = useState(false);
 
   useEffect(() => {
     async function loadProducts() {
@@ -39,14 +41,17 @@ export const ProductsList: React.FC = () => {
 
   return (
     <S.Container>
+      {showCart && <Cart showCart={showCart} onCloseCart={() => setShowCart(false)} />}
+      
       {products.map((prod) => {
         return (
           <ProductCard
             key={prod.id}
-            product = {prod}
+            product={prod}
+            setShowCart={setShowCart}
           />
-        )
+        );
       })}
     </S.Container>
-  )
+  );
 }
